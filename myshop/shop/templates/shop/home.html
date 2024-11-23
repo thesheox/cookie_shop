@@ -1,0 +1,12 @@
+<h1>Products</h1>
+<ul>
+    {% for product in products %}
+    <li>
+        {{ product.name }} - ${{ product.price }} - {{ product.quantity }} in stock
+        <a href="{% url 'buy_product' product.id %}">Buy</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'login' %}">Login</a> |
+<a href="{% url 'signup' %}">Sign Up</a>
